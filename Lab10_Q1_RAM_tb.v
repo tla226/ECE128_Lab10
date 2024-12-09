@@ -1,3 +1,4 @@
+
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -23,8 +24,8 @@
 module Lab10_Q1_RAM_tb;
 reg clk, rst, i_write_en;
 reg [2:0] i_addr;
-reg [2:0] i_write_data;
-wire [3:0] o_read_data;
+reg [7:0] i_write_data;
+wire [7:0] o_read_data;
 
 
 Lab10_Q1_RAM uut(clk, rst, i_write_en, i_addr, i_write_data, o_read_data);
@@ -40,7 +41,7 @@ i_addr = 0;
 #10;
 i_write_en = 1;
 i_addr = 0;
-i_write_data = 3'b000;
+i_write_data = 8'b00000000;
 #10;
 i_write_en = 0;
 
@@ -48,35 +49,35 @@ i_write_en = 0;
 #10;
 i_write_en = 1;
 i_addr = 1;
-i_write_data = 3'b001;
+i_write_data = 8'b00000001;
 #10;
 i_write_en = 0;
 
 #10;
 i_write_en = 1;
 i_addr = 2;
-i_write_data = 3'b010;
+i_write_data = 8'b00000010;
 #10;
 i_write_en = 0;
 
 #10;
 i_write_en = 1;
 i_addr = 3;
-i_write_data = 3'b011;
+i_write_data = 8'b00000011;
 #10;
 i_write_en = 0;
 
 #10;
 i_write_en = 1;
 i_addr = 4;
-i_write_data = 3'b100;
+i_write_data = 8'b00000100;
 #10;
 i_write_en = 0;
 
 #10;
 i_write_en = 1;
 i_addr = 5;
-i_write_data = 3'b101;
+i_write_data = 8'b00000101;
 #10;
 i_write_en = 0;
 
@@ -84,14 +85,14 @@ i_write_en = 0;
 #10;
 i_write_en = 1;
 i_addr = 6;
-i_write_data = 3'b110;
+i_write_data = 8'b00000110;
 #10;
 i_write_en = 0;
 
 #10;
 i_write_en = 1;
 i_addr = 7;
-i_write_data = 3'b111;
+i_write_data = 8'b00000111;
 #10;
 i_write_en = 0;
 
